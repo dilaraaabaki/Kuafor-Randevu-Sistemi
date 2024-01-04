@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <title>Kuaför Randevu Sistemi - Müşteri Kayıt</title>
+  <style>
+    img.sign-up-logo {
+        width: 130px;
+        margin-bottom: 10px;
+    }
+    .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    }
+    .divider-text span {
+        padding: 7px;
+        font-size: 12px;
+        position: relative;   
+        z-index: 2;
+    }
+    .divider-text:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        top: 55%;
+        left: 0;
+        z-index: 1;
+    }
+      p.text-center {
+        font-size: 21px;
+        font-weight: 500;
+    }
+    button.btn.btn-primary {
+        
+        margin-bottom: 20px;
+        --bs-btn-bg: #147120;
+        --bs-btn-border-color: #147120;
+        --bs-btn-hover-color: #ffffff;
+        --bs-btn-hover-bg: #147120; 
+        --bs-btn-hover-border-color: #147120;
+        --bs-btn-active-bg: #147120;
+        --bs-btn-active-border-color: #147120;
+    }
+  </style>
+  <!-- <style>
+    body {
+      background: linear-gradient(0deg, rgba(202, 254, 207, 1) 0%, rgba(255, 255, 255, 1) 52%, rgba(202, 254, 207, 1) 100%);
+    }
+
+    .container {
+      background-color: transparent;
+    }
+
+    .card {
+      margin-top: 5rem;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      background-color: #147120;
+      color: white;
+      font-weight: bold;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      font-size: 0.8rem;
+      padding: 0.4rem;
+    }
+
+    .btn-primary {
+      background-color: #147120;
+      border: none;
+      padding: 0.5rem 1rem;
+    }
+  </style> -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#navbarContainer").load("navbar.html");
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Navbar Start -->
+  <div id="navbarContainer"></div>
+  <!-- Navbar End -->
+  <div class="container">
+    <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <p class="text-center">Kayıt Ol</p>
+      <div class="text-center">
+        <img src="rmvbg-logo.png" class="sign-up-logo" alt="">
+       </div>
+        <p class="text-center">Ailesine Katıl!</p>
+        <form>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            <input name="" class="form-control mb-4" placeholder="Ad Soyad" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input name="" class="form-control mb-4" placeholder="Email Adresi" type="email">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+            </div>
+            <input name="" class="form-control mb-4" placeholder="Telefon Numarası" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input class="form-control mb-4" placeholder="Şifre oluştur" type="password">
+        </div> <!-- form-group// -->                                     
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary"> Kayıt Ol </button>
+        </div> <!-- form-group// -->      
+        <p class="text-center login">Hesabın var mı? <a href="login.html">Giriş Yap</a> </p>                                                                 
+    </form>
+    </article>
+  </div>
+    
+    </div> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

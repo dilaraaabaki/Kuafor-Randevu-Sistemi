@@ -1,0 +1,473 @@
+<!-- Anasayfa.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuaför Randevu Sistemi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+     <!-- Icon Font Stylesheet -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+     <!-- Icon Font Stylesheet End -->
+    <script>
+        $(document).ready(function(){
+            $("#navbarContainer").load("navbar.html");
+        });
+    </script>
+    <style>
+        .fa-phone-alt:before {
+    content: "\f879";
+    color: black !important;
+        }
+        .fa-envelope:before {
+            content: "\f0e0";
+            color: black !important;
+        }
+        .fa-map-marker-alt:before {
+            content: "\f3c5";
+            color: black !important;
+        }
+        a.btn.btn-primary.carousel {
+            margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        width: 8rem;
+        --bs-btn-bg: #147120;
+        --bs-btn-border-color: #147120;
+        --bs-btn-hover-color: #ffffff;
+        --bs-btn-hover-bg: #147120; 
+        --bs-btn-hover-border-color: #147120;
+        --bs-btn-active-bg: #147120;
+        --bs-btn-active-border-color: #147120;
+        }
+        a.btn.btn-primary.btn-primary-outline-0.rounded-pill.py-2.px-4 {
+            margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        --bs-btn-bg: #1aad2e7a;
+        --bs-btn-border-color: #09f1287a;
+        --bs-btn-hover-color: #ffffff;
+        --bs-btn-hover-bg: #147120; 
+        --bs-btn-hover-border-color: #147120;
+        --bs-btn-active-bg: #147120;
+        --bs-btn-active-border-color: #23c4387a;
+        }
+        
+        .border-primary {
+            --bs-border-opacity: 1;
+            border-color: #aaf0b370 !important;
+            border-top-color: rgba(170, 240, 179, 0.44) !important;
+            border-right-color: rgba(170, 240, 179, 0.44) !important;
+            border-bottom-color: rgba(170, 240, 179, 0.44) !important;
+            border-left-color: rgba(170, 240, 179, 0.44) !important;
+        }
+        section.pricing {
+        background:  #8ff59d7a;
+        background: linear-gradient(to right,  #d5f8da7a,  #d1f6d67a);
+        }
+
+        .pricing .card {
+        border: none;
+        border-radius: 1rem;
+        transition: all 0.2s;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing hr {
+        margin: 1.5rem 0;
+        }
+
+        .pricing .card-title {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+        letter-spacing: .1rem;
+        font-weight: bold;
+        }
+
+        .pricing .card-price {
+        font-size: 3rem;
+        margin: 0;
+        }
+
+        .pricing .card-price .period {
+        font-size: 0.8rem;
+        }
+
+        .pricing ul li {
+        margin-bottom: 1rem;
+        }
+
+        .pricing .text-muted {
+        opacity: 0.7;
+        }
+
+        .pricing .btn {
+        font-size: 80%;
+        border-radius: 5rem;
+        letter-spacing: .1rem;
+        font-weight: bold;
+        padding: 1rem;
+        opacity: 0.7;
+        transition: all 0.2s;
+        }
+        a.btn.btn-primary.text-uppercase {
+            --bs-btn-bg: #147120 ;
+            --bs-btn-border-color: #147120;
+            --bs-btn-hover-color: #ffffff;
+            --bs-btn-hover-bg: #147120;
+            --bs-btn-hover-border-color: #147120;
+            --bs-btn-active-bg: #147120;
+            --bs-btn-active-border-color:#147120;
+        }
+        /* Hover Effects on Card */
+
+        @media (min-width: 992px) {
+        .pricing .card:hover {
+            margin-top: -.25rem;
+            margin-bottom: .25rem;
+            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing .card:hover .btn {
+            opacity: 1;
+        }
+        .text-center.p-4.rounded-bottom.bg-primary {
+            background-color: rgba(255, 255, 255, 0.5) !important;
+            border: 3px solid #c2ffdb;
+        }
+        }
+        body .border-primary {
+            --bs-border-opacity: 1;
+            border-color: #9bfaa87a !important;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar Start -->
+     <div id="navbarContainer"></div>
+     <!-- Navbar End -->
+     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center">
+                    <div class="input-group w-75 mx-auto d-flex">
+                        <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Search End -->
+
+<!-- Carousel Start -->
+<div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/carousel-1.jpg" class="d-block w-100" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="img/carousel-2.jpg" class="d-block w-100" alt="Image 2">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    
+    <!-- "Randevu Al" Butonu -->
+    <div class="carousel-caption text-center mt-3">
+        <a href="#" class="btn btn-primary carousel">Randevu Al</a>
+    </div>
+</div>
+<!-- Carousel End -->
+<!-- Services Start -->
+<div class="container-fluid services py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 800px;">
+            <h1 class="display-3">Hizmetlerimiz</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-end border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <div class="services-content text-end">
+                                <h3>Saç Kesimi</h3>
+                                <p>Uzman kuaförlerimizle hayalinizdeki saç modelini keşfedin. Trendlerle bütünleşen kesim teknikleriyle size özel bir görünüm elde edin. Saç kesimi deneyimini bizimle yaşayın, stilinizi öne çıkarın!</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-7.jpg" class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-start border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-2.jpeg   " class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="services-content text-start">
+                                <h3>Fön</h3>
+                                <p> Saçlarınıza parlaklık ve hacim katmak, tarzınıza özel bir dokunuş eklemek için profesyonel fön hizmetlerimizle öne çıkın. Randevunuzu alın ve saçlarınızı baştan yaratmanın keyfini çıkarın!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-end border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <div class="services-content text-end">
+                                <h3>Saç Boyama</h3>
+                                <p>Renkli ve yaratıcı bir dönüşüm için güzellik merkezimizde saç boyama hizmetleri! Deneyimli stilistlerimizle hayalinizdeki renge kavuşun. Modern tekniklerle ve kaliteli ürünlerle saçlarınıza özel bir dokunuş katıyoruz</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-3.jpg" class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-start border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-4.jpg" class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="services-content text-start">
+                                <h3>Manikür</h3>
+                                <p>Parmak uçlarınıza özenle dokunan profesyonel ellere sahip olun! Trendleri takip eden manikür hizmetleriyle tırnaklarınıza özel bir güzellik katıyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-end border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <div class="services-content text-end">
+                                <h3>Pedikür</h3>
+                                <p>Ayaklarınıza özenle dokunun! Uzman pedikür hizmetleriyle ayaklarınıza özel bakım ve şıklık sunuyoruz.</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-5.jpg" class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-start border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-6.jpg" class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="services-content text-start">
+                                <h3>Nail-Art</h3>
+                                <p>Nail-Art sanatınızı keşfedin! Deneyimli uzmanlarımız tarafından özel tasarlanmış Nail-Art uygulamaları ile tırnaklarınıza sanat ve şıklık katıyoruz. Ellerinizle sanatın buluştuğu özel anlar için bizi keşfedin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-end border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <div class="services-content text-end">
+                                <h3>Yüz Maskesi</h3>
+                                <p>Cilt tipinize özel bakımlar ve modern uygulamalarla, sağlıklı ve ışıltılı bir cilde adım atın</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-1.jpg" class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="services-item bg-light border-4 border-start border-primary rounded p-4">
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <div class="services-img d-flex align-items-center justify-content-center rounded">
+                                <img src="img/services-8.jpg" class="img-fluid rounded" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="services-content text-start">
+                                <h3>Buhar Banyosu</h3>
+                                <p>Yüksek kaliteli ve etkili yüz maskelerimizle, cilt bakımınızı uzman ellere bırakın. Genç, canlı ve sağlıklı bir cilt için bizimle tanışın!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+<!-- Pricing Start -->
+<section class="pricing py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Free Tier -->
+        <div class="col-lg-4">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">Free</h5>
+              <h6 class="card-price text-center">$0<span class="period">/month</span></h6>
+              <hr>
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Full Body Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Deep Tissue Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Hot Stone Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Tissue Body Polish</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Foot & Nail Care</li>
+              </ul>
+              <div class="d-grid">
+                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Plus Tier -->
+        <div class="col-lg-4">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">Plus</h5>
+              <h6 class="card-price text-center">$9<span class="period">/month</span></h6>
+              <hr>
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Full Body Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Deep Tissue Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Hot Stone Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Tissue Body Polish</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Foot & Nail Care</li>
+              </ul>
+              <div class="d-grid">
+                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pro Tier -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">Pro</h5>
+              <h6 class="card-price text-center">$49<span class="period">/month</span></h6>
+              <hr>
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Full Body Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Deep Tissue Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Hot Stone Massage</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Tissue Body Polish</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Foot & Nail Care</li>
+              </ul>
+              <div class="d-grid">
+                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Pricing End -->
+
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-12">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="d-inline-flex bg-light w-100 border border-primary p-4 rounded">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
+                            <div>
+                                <h4>Adres</h4>
+                                <p class="mb-0">123 North tower New York, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-inline-flex bg-light w-100 border border-primary p-4 rounded">
+                            <i class="fas fa-envelope fa-2x text-primary me-4"></i>
+                            <div>
+                                <h4>E-Mail Adresi</h4>
+                                <p class="mb-0">info@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-inline-flex bg-light w-100 border border-primary p-4 rounded">
+                            <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p class="mb-0">(+012) 3456 7890 123</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="rounded">
+                    <iframe class="rounded-top w-100" 
+                    style="height: 450px; margin-bottom: -6px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class=" text-center p-4 rounded-bottom bg-primary">
+                    <h4 class="text- fw-bold">Bizi Takip Etmeyi Unutmayın!</h4>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-light btn-light-outline-0 btn-square rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+<!-- Contact End -->
+    <!-- Bootstrap JS ve Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+</body>
+</html>

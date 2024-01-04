@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Admin Randevu İşlemleri Paneli-Shine Beauty</title>
+    <script>
+        $(document).ready(function(){
+            $("#navbarContainer").load("navbar.html");
+        });
+    </script>
+    <style>
+      
+        body {
+          background-color: #f8f9fa;
+        }
+        
+        .container {
+          margin-top: 50px;
+        }
+        table {
+          margin-top: 20px;
+        }
+        button.btn.btn-primary {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 15px;
+          width: 8rem;
+          --bs-btn-bg: #147120;
+          --bs-btn-border-color: #147120;
+          --bs-btn-hover-color: #ffffff;
+           --bs-btn-hover-bg: #147120; 
+          --bs-btn-hover-border-color: #147120;
+          --bs-btn-active-bg: #147120;
+          --bs-btn-active-border-color: #147120;
+      }
+      </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <div id="navbarContainer"></div>
+    <!-- Navbar End -->
+    <!-- start -->
+    <div class="container">
+        <!-- Randevu Listesi -->
+        <div id="randevu-listesi">
+            <h3>Randevu Listesi</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Müşteri Adı</th>
+                        <th scope="col">Tarih</th>
+                        <th scope="col">Saat</th>
+                        <th scope="col">Kuaför</th>
+                        <th scope="col">Hizmet Türü</th>
+                        <th scope="col">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-success" onclick="onaylaRandevu(this)">Onayla</button>
+                            <button type="button" class="btn btn-danger" onclick="reddetRandevu(this)">Reddet</button>
+                        </td>
+                    </tr>
+                    <!-- Diğer randevular buraya eklenebilir -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+          
+          <script>
+            function onaylaRandevu(button) {
+              var row = button.closest("tr");
+              var customerName = row.cells[0].innerText;
+              // İlgili randevuyu onaylama işlemini burada gerçekleştirin
+              console.log("Randevu onaylandı: " + customerName);
+            }
+          
+            function reddetRandevu(button) {
+              var row = button.closest("tr");
+              var customerName = row.cells[0].innerText;
+              // İlgili randevuyu reddetme işlemini burada gerçekleştirin
+              console.log("Randevu reddedildi: " + customerName);
+            }
+          </script>
+        <!-- Randevu Listesi End -->
+        <div class="container mt-5">
+           <div class="row">
+        
+                <!-- Randevu Ekle Formu -->
+                <div class="card col-md-5 mx-auto">
+                    <div class="card-header">
+                        Randevu Ekle
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="musteri-adi">Müşteri Adı</label>
+                                <input type="text" class="form-control" id="musteri-adi" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kuaforSec">Kuaför Seç:</label>
+                                <select class="form-control" id="kuaforSec">
+                                    <!-- Kuaför seçenekleri buraya eklenebilir -->
+                                    <option>Örnek Kuaför 1</option>
+                                    <option>Örnek Kuaför 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hizmetTuru">Hizmet Türü Seç:</label>
+                                <select class="form-control" id="hizmetTuru">
+                                    <!-- Hizmet türü seçenekleri buraya eklenebilir -->
+                                    <option>Kuaför Hizmeti</option>
+                                    <option>Saç Kesimi</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tarih">Tarih:</label>
+                                <input type="date" class="form-control" id="tarih">
+                            </div>
+                            <div class="form-group">
+                                <label for="saat">Saat:</label>
+                                <input type="time" class="form-control" id="saat">
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary"> Randevu Ekle </button>
+                            </div>  
+                        </form>
+                    </div>
+                </div>
+                
+                
+    
+        <!-- Çalışma Saatleri Start -->
+        <!-- <h2 class="mb-4">Çalışma Saatleri Ayarla</h2>
+        <form id="workingHoursForm">
+          <div class="form-group">
+            <label for="days">Çalışma Günleri:</label>
+            <select class="form-select" id="days" name="daySelect" placeholder="Hizmet Türü" required>
+              <option value="" disabled selected>Hizmet Türü</option>
+              <option>Pazartesi</option>
+              <option>Salı</option>
+              <option>Çarşamba</option>
+              <option>Perşembe</option>
+              <option>Cuma</option>
+              <option>Cumartesi</option>
+              <option>Pazar</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="start-time">Başlangıç Saati:</label>
+            <input type="time" class="form-control" id="start-time">
+          </div>
+      
+          <div class="form-group">
+            <label for="end-time">Bitiş Saati:</label>
+            <input type="time" class="form-control" id="end-time">
+          </div>
+      
+          <button type="button" class="btn btn-primary" onclick="addRow()">Kaydet</button>
+        </form> -->
+<!--       
+        <table class="table table-bordered" id="workingHoursTable">
+          <thead>
+            <tr>
+              <th>Çalışma Günleri</th>
+              <th>Başlangıç Saati</th>
+              <th>Bitiş Saati</th>
+            </tr>
+          </thead>
+          <tbody>
+             Eklenen satırlar buraya eklenecek -->
+          <!-- </tbody>
+        </table>
+        </div>  -->
+      <!-- Çalışma Saatleri -->
+      <!-- <div class="card-body">
+        <form>
+             New Dropdown for Hairdresser Selection -->
+            <!-- <div class="form-group">
+                <label for="hairdresser">Kuaför Seç:</label>
+                <select class="form-select" id="hairdresser" name="hairdresserSelect" required>
+                    <option value="" disabled selected>Kuaför Seç</option>
+                    <option>Kuaför 1</option> -->
+                    <!-- <option>Kuaför 2</option> -->
+                    <!-- Add more options as needed -->
+                <!-- </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tarih">Tarih:</label>
+                <input type="date" class="form-control" id="tarih">
+            </div>
+            <div class="form-group">
+                <label for="saat">Saat:</label>
+                <input type="time" class="form-control" id="saat">
+            </div>
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-primary" onclick="addAppointment()"> Randevu Ekle </button>
+            </div>
+        </form>
+    </div> 
+</div> -->
+
+<!-- <script>
+    function addAppointment() {
+        var hairdresser = document.getElementById("hairdresser").value;
+        var date = document.getElementById("tarih").value;
+        var time = document.getElementById("saat").value;
+
+        if (hairdresser && date && time) {
+            // Handle the appointment addition logic here
+            console.log("Selected Kuaför: " + hairdresser);
+            console.log("Selected Tarih: " + date);
+            console.log("Selected Saat: " + time);
+        } else {
+            alert("Lütfen tüm alanları doldurun.");
+        }
+    }
+</script>
+      <script>
+        function addRow() {
+          var days = document.getElementById("days");
+          var selectedDays = Array.from(days.selectedOptions).map(option => option.text);
+          var startTime = document.getElementById("start-time").value;
+          var endTime = document.getElementById("end-time").value;
+      
+          if (selectedDays.length > 0 && startTime && endTime) {
+            var table = document.getElementById("workingHoursTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+      
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+      
+            cell1.innerHTML = selectedDays.join(", ");
+            cell2.innerHTML = startTime;
+            cell3.innerHTML = endTime;
+      
+            // Formu sıfırla
+            document.getElementById("workingHoursForm").reset();
+          } else {
+            alert("Lütfen tüm alanları doldurun.");
+          }
+        }
+      </script>
+       -->
+      </body>
+    <!-- end -->
+    <!--JS Codes Start-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <!--JS Codes End  -->
+</body>
+</html>

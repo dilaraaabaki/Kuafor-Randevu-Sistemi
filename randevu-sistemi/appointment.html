@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                     
+    <title>Randevu Al</title>
+    <script src="randevu-al.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script>
+        $(document).ready(function(){
+            $("#navbarContainer").load("navbar.html");
+        });
+    </script>
+    <style>
+      body{
+        width: 100%;
+        height:100%;
+        overflow: hidden;
+      }
+      .inner-layer{
+        position: absolute;
+        width: 100%;
+        height:100%;
+        background: rgb(202,254,207);
+        background: linear-gradient(0deg, rgba(202,254,207,1) 0%, rgba(255,255,255,1) 52%, rgba(202,254,207,1) 100%);
+        overflow: auto;
+      }
+      .form-data{
+        margin-top: 46px;
+        border-radius: 10px;
+        background-color: #FFF;
+        padding: 20px 30px 20px 30px
+        
+      }
+      .form-body{
+        padding: 20px;
+      }
+      .form-head{
+        padding: 10px;
+      }
+      .form-head h2 {
+        font-size: 26px;
+        font-weight: 600;
+        color: #147120;
+        text-align: center;
+      }
+      .no-margin{
+        margin: 0px;
+      }
+
+      .row.form-row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .form-row{
+        margin-bottom: 15px;
+      }
+      .form-control{
+        background-color: #f7f7ff;
+        border-radius: 0px;
+
+      }
+      .form-control:focus{
+        box-shadow: none;
+        border: 3px solid #138496;
+      }
+      .btn-appointment{
+        background-color: #138496 !important;
+        border-color: #138496 !important;
+        width: 100%;
+      }
+      .content{
+        margin-top: 15%;
+        text-align: center;
+        color: #FFF;
+        padding: 30px;
+      }
+      .content h1{
+        font-weight: 600;
+        font-size: 2.5rem;
+        color: #147120;
+      }
+      .content h2{
+        font-weight: 600;
+        font-size:2.5rem;
+        margin-top: 20px;
+        color: #147120;
+      }
+      .content p{
+        font-size: 22px;
+        margin-top: 20px;
+        color: #147120;
+      }
+      .datepicker td, .datepicker th{
+        padding: 5px;
+      }
+      .dropdown-menu.datepicker{
+        max-width: 300px !important;
+      }
+      button.btn.btn-primary {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 15px;
+          width: 7rem;
+          --bs-btn-bg: #147120;
+          --bs-btn-border-color: #147120;
+          --bs-btn-hover-color: #ffffff;
+           --bs-btn-hover-bg: #147120; 
+          --bs-btn-hover-border-color: #147120;
+          --bs-btn-active-bg: #147120;
+          --bs-btn-active-border-color: #147120;
+      }
+
+
+      @media screen and (max-width: 976px){
+        
+      }
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <div id="navbarContainer"></div>
+    <!-- NavBar End -->
+    <div class="inner-layer">
+      <div class="container">
+        <div class="row no-margin">
+            <div class="col-sm-7">
+                <div class="content">
+                    <h1>Hızlı ve Güvenilir Randevu Alma Deneyimi</h1>
+                    <p>Bize zamanınızı söyleyin, gerisini bize bırakın. Randevularınızı hızlıca ve sorunsuzca alın!</p>
+                    
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-data">
+                    <div class="form-head">
+                        <h2>Randevu Al</h2>
+                    </div>
+                    <div class="form-body">
+                        <div class="row form-row">
+                          <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Ad Soyad">
+                        </div>
+                        <div class="row form-row">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="E-posta Adresi">
+                        </div>
+                         <div class="row form-row">
+                          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon">
+                         </div>
+                        <div class="row form-row ">
+                          <select class="form-select" id="serviceType" name="serviceType" placeholder="Hizmet Türü" required>
+                            <option value="" disabled selected>Hizmet Türü</option>
+                            <option value="sac-kesimi">Saç Kesimi</option>
+                            <option value="fon">Fön</option>
+                            <option value="sac-boyama">Saç Boyama</option>
+                            <option value="manikur">Manikür</option>
+                            <option value="pedikur">Pedikur</option>
+                            <option value="nailart">Nail-Art</option>
+                          </select>
+                        </div>
+                         <div class="row form-row">
+                            <div class="col-sm-6">
+                              <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" placeholder="Randevu Saati" required>
+                            </div>
+                            <div class="col-sm-6">
+                              <input type="time" class="form-control" id="appointmentTime" name="appointmentTime" placeholder="Rnadevu Saati" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="message" class="form-label text-center">Açıklama</label>
+                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        </div>
+                         <div class="row form-row button">
+                          <button type="button" class="btn btn-primary" onclick="submitForm(event)">
+                            Randevu Al
+                          </button>
+                          <p class="text-center">Hesabınız yok mu? <a href="musteri-kayit.html">Kayıt Ol</a> </p>       
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+ 
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>

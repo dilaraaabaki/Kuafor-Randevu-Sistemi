@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuaför İşlemleri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#navbarContainer").load("navbar.html");
+        });
+    </script>
+    <style>
+      .card.col-md-5.mx-auto{
+        position: relative;
+          display: -ms-flexbox;
+          display: flex;
+          padding: 2rem 3rem 2rem 3rem;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          background-color: #fff;
+          background-clip: padding-box;
+          box-shadow: 0 0 40px #c7d6cd;
+          outline: 0;
+          max-width: 500px;
+          margin-top: 50px;
+      }
+      .container.mt-5{
+        position: relative;
+          display: -ms-flexbox;
+          display: flex;
+          padding: 2rem 3rem 2rem 3rem;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          background-color: #fff;
+          background-clip: padding-box;
+          box-shadow: 0 0 40px #c7d6cd;
+          outline: 0;
+          max-width: 500px;
+          margin-top: 50px;
+      }
+      button.btn.btn-primary {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 15px;
+          width: 8rem;
+          --bs-btn-bg: #147120;
+          --bs-btn-border-color: #147120;
+          --bs-btn-hover-color: #ffffff;
+           --bs-btn-hover-bg: #147120; 
+          --bs-btn-hover-border-color: #147120;
+          --bs-btn-active-bg: #147120;
+          --bs-btn-active-border-color: #147120;
+      }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <div id="navbarContainer"></div>
+    <!-- Navbar End -->
+<div class="container mt-5">
+    <h2 class="mb-4">Kuaför İşlemleri</h2>
+
+    <!-- Kuaför İşlemleri Formu -->
+    <form>
+        <div class="form-group">
+            <label for="kullaniciAdi">Kullanıcı Adı:</label>
+            <input type="text" class="form-control" id="kullaniciAdi" placeholder="Kullanıcı Adı">
+        </div>
+        <div class="form-group">
+            <label for="sifre">Şifre:</label>
+            <input type="password" class="form-control" id="sifre" placeholder="Şifre">
+        </div>
+        <div class="form-group">
+            <label for="kuaförAdi">Kuaför Adı:</label>
+            <input type="text" class="form-control" id="kuaförAdi" placeholder="Kuaför Adı">
+        </div>
+        <div class="form-group">
+            <label for="telefon">Telefon Numarası:</label>
+            <input type="tel" class="form-control" id="telefon" placeholder="Telefon Numarası">
+        </div>
+        <div class="form-group">
+            <label for="adres">Adres:</label>
+            <textarea class="form-control" id="adres" rows="3" placeholder="Adres"></textarea>
+        </div>
+
+        <!-- Kuaför Ekle-Sil Butonu -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Kuaför Ekle</button>
+          <button type="submit" class="btn btn-primary">Kuaför Sil</button>
+        </div>
+    </form>
+</div>
+ <!-- Çalışma Saatleri Start -->
+  <div class="card col-md-5 mx-auto">
+  <h2 class="mb-4">Çalışma Saatleri Ayarla</h2>
+  <form id="workingHoursForm">
+   <div class="form-group">
+     <label for="days">Çalışma Günleri:</label>
+     <select class="form-select" id="days" name="daySelect" placeholder="Hizmet Türü" required>
+       <option value="" disabled selected>Günler</option>
+       <option>Pazartesi</option>
+       <option>Salı</option>
+       <option>Çarşamba</option>
+       <option>Perşembe</option>
+       <option>Cuma</option>
+       <option>Cumartesi</option>
+       <option>Pazar</option>
+     </select>
+   </div>
+
+   <div class="form-group">
+     <label for="start-time">Başlangıç Saati:</label>
+     <input type="time" class="form-control" id="start-time">
+   </div>
+
+   <div class="form-group">
+     <label for="end-time">Bitiş Saati:</label>
+     <input type="time" class="form-control" id="end-time">
+   </div>
+   <div class="text-center">
+    <button type="button" class="btn btn-primary" onclick="addRow()">Kaydet</button>
+  </div>
+   
+  </form>
+
+  <table class="table table-bordered" id="workingHoursTable">
+   <thead>
+     <tr>
+       <th>Çalışma Günleri</th>
+       <th>Başlangıç Saati</th>
+       <th>Bitiş Saati</th>
+     </tr>
+   </thead>
+   <tbody>
+     <!-- Eklenen satırlar buraya eklenecek -->
+   </tbody>
+  </table>
+  </div>
+<!-- Çalışma Saatleri -->
+<script>
+ function addRow() {
+   var days = document.getElementById("days");
+   var selectedDays = Array.from(days.selectedOptions).map(option => option.text);
+   var startTime = document.getElementById("start-time").value;
+   var endTime = document.getElementById("end-time").value;
+
+   if (selectedDays.length > 0 && startTime && endTime) {
+     var table = document.getElementById("workingHoursTable").getElementsByTagName('tbody')[0];
+     var newRow = table.insertRow(table.rows.length);
+
+     var cell1 = newRow.insertCell(0);
+     var cell2 = newRow.insertCell(1);
+     var cell3 = newRow.insertCell(2);
+
+     cell1.innerHTML = selectedDays.join(", ");
+     cell2.innerHTML = startTime;
+     cell3.innerHTML = endTime;
+
+     // Formu sıfırla
+     document.getElementById("workingHoursForm").reset();
+   } else {
+     alert("Lütfen tüm alanları doldurun.");
+   }
+ }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+</body>
+</html>

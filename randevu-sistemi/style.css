@@ -1,0 +1,136 @@
+.fa-phone-alt:before {
+    content: "\f879";
+    color: black !important;
+}
+.fa-envelope:before {
+    content: "\f0e0";
+    color: black !important;
+}
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+    color: black !important;
+}
+a.btn.btn-primary.carousel {
+    margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  width: 8rem;
+  --bs-btn-bg: #147120;
+  --bs-btn-border-color: #147120;
+  --bs-btn-hover-color: #ffffff;
+   --bs-btn-hover-bg: #147120; 
+  --bs-btn-hover-border-color: #147120;
+  --bs-btn-active-bg: #147120;
+  --bs-btn-active-border-color: #147120;
+}
+a.btn.btn-primary.btn-primary-outline-0.rounded-pill.py-2.px-4 {
+    margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  --bs-btn-bg: #1aad2e7a;
+  --bs-btn-border-color: #09f1287a;
+  --bs-btn-hover-color: #ffffff;
+   --bs-btn-hover-bg: #147120; 
+  --bs-btn-hover-border-color: #147120;
+  --bs-btn-active-bg: #147120;
+  --bs-btn-active-border-color: #23c4387a;
+}
+a.btn.btn-primary.btn-primary-outline-0.rounded-pill.py-3.px-5{
+    margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  --bs-btn-bg: #23c4387a;
+  --bs-btn-border-color: #23c4387a;
+  --bs-btn-hover-color: #ffffff;
+   --bs-btn-hover-bg: #147120; 
+  --bs-btn-hover-border-color: #147120;
+  --bs-btn-active-bg: #147120;
+  --bs-btn-active-border-color: #23c4387a;
+}
+.border-primary {
+    --bs-border-opacity: 1;
+    border-color: #aaf0b370 !important;
+    border-top-color: rgba(170, 240, 179, 0.44) !important;
+    border-right-color: rgba(170, 240, 179, 0.44) !important;
+    border-bottom-color: rgba(170, 240, 179, 0.44) !important;
+    border-left-color: rgba(170, 240, 179, 0.44) !important;
+}
+section.pricing {
+background:  #8ff59d7a;
+background: linear-gradient(to right,  #d5f8da7a,  #d1f6d67a);
+}
+
+.pricing .card {
+border: none;
+border-radius: 1rem;
+transition: all 0.2s;
+box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+margin: 0.5rem 0;
+font-size: 0.9rem;
+letter-spacing: .1rem;
+font-weight: bold;
+}
+
+.pricing .card-price {
+font-size: 3rem;
+margin: 0;
+}
+
+.pricing .card-price .period {
+font-size: 0.8rem;
+}
+
+.pricing ul li {
+margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+opacity: 0.7;
+}
+
+.pricing .btn {
+font-size: 80%;
+border-radius: 5rem;
+letter-spacing: .1rem;
+font-weight: bold;
+padding: 1rem;
+opacity: 0.7;
+transition: all 0.2s;
+}
+a.btn.btn-primary.text-uppercase {
+    --bs-btn-bg: #147120 ;
+    --bs-btn-border-color: #147120;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #147120;
+    --bs-btn-hover-border-color: #147120;
+    --bs-btn-active-bg: #147120;
+    --bs-btn-active-border-color:#147120;
+}
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+.pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+}
+
+.pricing .card:hover .btn {
+    opacity: 1;
+}
+.text-center.p-4.rounded-bottom.bg-primary {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border: 3px solid #c2ffdb;
+}
+}
+body .border-primary {
+    --bs-border-opacity: 1;
+    border-color: #9bfaa87a !important;
+}

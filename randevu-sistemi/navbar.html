@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-transparent.bg-body-tertiary {
+    background-color: white !important;
+    }
+    a.nav-link {
+    font-size: 15px;
+    color: black !important;
+    }
+    a.text-black.text-decoration-none.px-3 {
+    font-size: 14px;
+    }
+    a.text-black.text-decoration-none.px-3.py-1 {
+    border: 5px;
+    padding: 10px 20px;
+    background-color: #c2ffdb;
+    border-radius: 8px;
+}
+
+</style>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent bg-body-tertiary">
+        <div class="container">
+            <!--Logo-->
+            <img src="logo.png" alt="Logo" width="150" height="75" class="navbar-brand fs-4">
+            <!--Toggle Btn-->
+          <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--Sidebar-->
+          <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <img src="logo.png" alt="Logo" width="150" height="75" class="navbar-brand fs-4">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!--Sidebar Body-->
+            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 ">
+              <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="anasayfa.html">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Randevu Al</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hizmetlerimiz</a>
+                  </li>
+              </ul>
+            <!--Login/Sign Up-->
+            
+           <div class="d-flex flex-column flex-lg-row align-items-center gap-3">
+            <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a href="login.html" class="text-black text-decoration-none px-3">Giriş Yap</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sign-up.html" class="text-black text-decoration-none px-3 py-1">Üye Ol</a>
+                </li>
+              </ul>
+
+            </div> 
+            </div>
+          </div>
+        </div>
+      </nav>
+</body>
+</html>
