@@ -10,12 +10,4 @@ Bu proje, bir kuaförün randevu almak ve takip etmek için kullanılan basit bi
 - **Frontend:** HTML, CSS, jQuery
 - **API Test:** Postman
 
-## Projeyi Çalıştırma
-
-1. Proje dosyalarını indirin.
-2. IntelliJ IDEA ile projeyi açın.
-
-
-
-   ```bash
-   ./mvnw spring-boot:run
+![LoginPage](images/login_page.png)
