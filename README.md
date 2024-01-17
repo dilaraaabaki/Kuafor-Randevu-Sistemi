@@ -12,6 +12,8 @@ Bu proje, bir kuaförün randevu almak ve takip etmek için kullanılan basit bi
 
 ## Ekran Görüntüleri
 
+![Ana Sayfa](images/main_page.png)
+
 ![Giriş Sayfası](images/login_page.png)
 
 ![Randevu Ekleme Sayfası](images/randevu_add.png)
