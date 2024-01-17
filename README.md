@@ -10,4 +10,16 @@ Bu proje, bir kuaförün randevu almak ve takip etmek için kullanılan basit bi
 - **Frontend:** HTML, CSS, jQuery
 - **API Test:** Postman
 
-![LoginPage](images/login_page.png)
+## Ekran Görüntüleri
+
+![Giriş Sayfası](images/login_page.png)
+
+![Randevu Ekleme Sayfası](images/randevu_add.png)
+
+![Seçilen Kişi Sayfası](images/selected_person_page.png)
+
+![Randevu Sayfası](images/randevu_page.png)
+
+![Kayıt Sayfası](images/register_page.png)
+
+![Randevu Görüntüleme Sayfası](images/get_randevu.png)
